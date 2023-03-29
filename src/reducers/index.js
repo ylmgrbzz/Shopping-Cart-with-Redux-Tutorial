@@ -6,5 +6,13 @@ const initialState = {
 };
 
 export const reducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case "SEPETE_EKLE":
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
+    default:
+      return state;
+  }
 };
